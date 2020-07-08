@@ -1,4 +1,4 @@
-const json = require("../../../data/talks.json");
+import json from "Data/talks.json";
 
 export const talks = JSON.stringify(json);
 

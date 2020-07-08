@@ -10,7 +10,7 @@
 </script>
 
 <script>
-  import Talk from "../components/Talk.svelte";
+  import Talk from "Components/Talk.svelte";
   export let talks;
 </script>
 

@@ -1,4 +1,4 @@
-const json = require("../../../data/talks.json");
+import json from "Data/talks.json";
 
 const getTalks = (json) =>
   json.reduce((obj, talk) => {
