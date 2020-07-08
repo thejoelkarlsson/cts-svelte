@@ -1,13 +1,13 @@
 <script context="module">
   // eslint-disable-next-line no-unused-vars
   export async function preload({ params, query }) {
-    // the `slug` parameter is available because
-    // this file is called [slug].svelte
-    const res = await this.fetch(`talk/${params.slug}.json`);
+    // the `talk` parameter is available because
+    // this file is called [talk].svelte
+    const res = await this.fetch(`talk/${params.talk}.json`);
     const data = await res.json();
 
     if (res.status === 200) {
-      return { post: data };
+      return { talk: data };
     } else {
       this.error(res.status, data.message);
     }
@@ -15,7 +15,7 @@
 </script>
 
 <script>
-  export let post;
+  export let talk;
 </script>
 
 <style>
@@ -23,7 +23,7 @@
 		By default, CSS is locally scoped to the component,
 		and any unused styles are dead-code-eliminated.
 		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
+		going to appear inside the {{{talk.html}}} block,
 		so we have to use the :global(...) modifier to target
 		all elements inside .content
 	*/
@@ -55,16 +55,16 @@
 </style>
 
 <svelte:head>
-  <title>{post.title}</title>
+  <title>{talk.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
-<h3>{post.speakers.map(speaker => speaker.name).join(", ")}</h3>
+<h1>{talk.title}</h1>
+<h3>{talk.speakers.map((speaker) => speaker.name).join(', ')}</h3>
 
 <div class="content">
-  <p>{post.description}</p>
+  <p>{talk.description}</p>
   <ul>
-    {#each post.tracks as track}
+    {#each talk.tracks as track}
       <li>{track}</li>
     {/each}
   </ul>

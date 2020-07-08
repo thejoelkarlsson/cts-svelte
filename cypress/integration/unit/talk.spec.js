@@ -1,15 +1,11 @@
 import { talks } from "../../../src/routes/talk/[talk].json.js";
 
 describe("Talk - Unit tests", () => {
-  const compareJsonWithEndpoint = (id) => {
-    const talk = JSON.parse(talks[id]);
-    const title = talk.title;
-    cy.request(`/talk/${id}.json`).then((response) => expect(response.body).to.have.property("title", title));
-  };
-
   it("has the correct content", () => {
-    compareJsonWithEndpoint("1");
-    compareJsonWithEndpoint("2");
+    Object.keys(talks).forEach((id) => {
+      const talk = JSON.parse(talks[id]);
+      cy.request(`/talk/${id}.json`).then((response) => expect(response.body).eql(talk));
+    });
   });
 
   it("returns 404 message if not found", () => {

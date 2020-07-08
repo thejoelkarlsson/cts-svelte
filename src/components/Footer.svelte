@@ -4,7 +4,7 @@
 
 <style>
   footer {
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
   }
 </style>
