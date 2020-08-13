@@ -29,7 +29,7 @@ module.exports = {
             options: {
               dev,
               hydratable: true,
-              hotReload: false // pending https://github.com/sveltejs/svelte/issues/2377
+              hotReload: true // pending https://github.com/sveltejs/svelte/issues/2377
             }
           }
         }
@@ -37,6 +37,8 @@ module.exports = {
     },
     mode,
     plugins: [
+      require("tailwindcss"),
+      require("autoprefixer"),
       // pending https://github.com/sveltejs/svelte/issues/2377
       // dev && new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({

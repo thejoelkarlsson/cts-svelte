@@ -15,10 +15,7 @@
 </script>
 
 <style>
-  ul {
-    margin: 0 0 1em 0;
-    line-height: 1.5;
-  }
+
 </style>
 
 <svelte:head>
@@ -27,15 +24,12 @@
 
 <h1>All talks</h1>
 
-<ul>
+<div class="flex flex-wrap -mx-2">
   {#each talks as talk}
     <!-- we're using the non-standard `rel=prefetch` attribute to
                   tell Sapper to load the data for the page as soon as
                   the user hovers over the link or taps it, instead of
                   waiting for the 'click' event -->
-    <li>
-      <Talk {talk} />
-      <a rel="prefetch" href="talk/{talk.id}">{talk.title}</a>
-    </li>
+    <Talk {talk} />
   {/each}
-</ul>
+</div>
