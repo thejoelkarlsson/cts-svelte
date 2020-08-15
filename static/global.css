@@ -390,6 +390,10 @@ img {
   border-radius: 9999px;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }

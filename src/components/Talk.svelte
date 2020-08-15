@@ -1,5 +1,6 @@
 <script>
   import SpeakerImage from "Components/SpeakerImage.svelte";
+  import Track from "Components/Track.svelte";
   export let talk;
 </script>
 
@@ -18,9 +19,7 @@
     </div>
     <div class="px-6 py-4">
       {#each talk.tracks as track}
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 mb-2 text-sm font-semibold text-gray-700 mr-2">
-          {track}
-        </span>
+        <Track {track} />
       {/each}
     </div>
   </div>

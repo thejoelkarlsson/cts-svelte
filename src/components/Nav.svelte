@@ -61,5 +61,8 @@
         talks
       </a>
     </li>
+    <li>
+      <a aria-current={segment === 'schedule' ? 'page' : undefined} href="schedule">schedule</a>
+    </li>
   </ul>
 </nav>
