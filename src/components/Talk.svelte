@@ -1,6 +1,7 @@
 <script>
   import SpeakerImage from "Components/SpeakerImage.svelte";
   import Track from "Components/Track.svelte";
+  import Nav from "./Nav.svelte";
   export let talk;
 </script>
 
