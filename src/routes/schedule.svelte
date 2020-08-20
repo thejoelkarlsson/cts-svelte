@@ -24,6 +24,6 @@
 
 <h1>Schedule</h1>
 
-{#each schedule.slots as slot}
-  <Slot {...slot} />
+{#each schedule.slots as slot, i}
+  <Slot {...slot} light={i % 2 == 0} />
 {/each}

@@ -49,25 +49,30 @@
 </style>
 
 <nav>
-  <ul>
-    <li>
-      <a aria-current={segment === undefined ? 'page' : undefined} href=".">home</a>
-    </li>
-    <li>
-      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">about</a>
-    </li>
-    <li>
-      <a rel="prefetch" aria-current={segment === 'talks' || segment === 'talk' ? 'page' : undefined} href="talks">
-        talks
-      </a>
-    </li>
-    <li>
-      <a rel="prefetch" aria-current={segment === 'speakers' || segment === 'speaker' ? 'page' : undefined} href="speakers">
-        speakers
-      </a>
-    </li>
-    <li>
-      <a aria-current={segment === 'schedule' ? 'page' : undefined} href="schedule">schedule</a>
-    </li>
-  </ul>
+  <div class="container mx-auto">
+    <ul>
+      <li>
+        <a aria-current={segment === undefined ? 'page' : undefined} href=".">home</a>
+      </li>
+      <li>
+        <a aria-current={segment === 'about' ? 'page' : undefined} href="about">about</a>
+      </li>
+      <li>
+        <a rel="prefetch" aria-current={segment === 'talks' || segment === 'talk' ? 'page' : undefined} href="talks">
+          talks
+        </a>
+      </li>
+      <li>
+        <a
+          rel="prefetch"
+          aria-current={segment === 'speakers' || segment === 'speaker' ? 'page' : undefined}
+          href="speakers">
+          speakers
+        </a>
+      </li>
+      <li>
+        <a aria-current={segment === 'schedule' ? 'page' : undefined} href="schedule">schedule</a>
+      </li>
+    </ul>
+  </div>
 </nav>

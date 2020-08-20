@@ -6,7 +6,7 @@
 
 </style>
 
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 px-2">
+<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-4 px-2">
   <div class="max-w-sm rounded overflow-hidden mb-4 shadow-lg">
     <div>
       <img src={`/images/speaker/${speaker.image}`} alt={speaker.name} />
