@@ -20,15 +20,14 @@
 </style>
 
 <div class={`flex flex-wrap p-2 -mx-2 mb-4 ${light ? 'bg-orange-200' : 'bg-orange-300'}`}>
-  <div class="w-full flex justify-between">
-    <p class="font-bold text-xl mb-2">{startTime}-{endTime}</p>
+  <div class="w-full flex justify-between cursor-pointer pl-2" on:click={toggleVisibility}>
+    <p class="font-bold text-xl">{startTime}-{endTime}</p>
     <svg
-      class={`${visible ? '' : 'rotate-180'} transform transition-transform duration-300 ease-in-out`}
+      class={`${visible ? 'rotate-180' : ''} transform transition-transform duration-300 ease-in-out`}
       width="24px"
       height="24px"
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      on:click={toggleVisibility}>
+      xmlns="http://www.w3.org/2000/svg">
       <g>
         <rect width="24" height="24" opacity="0" />
         <path
@@ -39,23 +38,23 @@
   </div>
 
   {#if type === 'keynote' || type === 'fika'}
-    <div class={`w-full mb-4 px-2 ${visible ? '' : 'hidden'}`}>
-      <div class="bg-white px-2 py-4 rounded shadow-lg">
+    <div class={`w-full my-2 px-2 ${visible ? '' : 'hidden'}`}>
+      <div class="bg-white p-4 rounded shadow-lg">
         <p class="font-bold text-xl">{title}</p>
         <p class="text-sm">{startTime}-{endTime}</p>
       </div>
     </div>
   {:else if type === 'talks'}
     {#each talks as talk}
-      <div class={`w-full sm:w-1/2 md:w-1/3 mb-4 px-2 ${visible ? '' : 'hidden'}`}>
-        <div class="bg-white px-2 py-4 rounded shadow-lg">
+      <div class={`w-full sm:w-1/2 md:w-1/3 my-4 px-2 ${visible ? '' : 'hidden'}`}>
+        <div class="bg-white p-4 rounded shadow-lg">
           <p class="font-bold text-xl mb-2">{talk.title}</p>
           <p class="block text-gray-600 text-sm">
             {talk.speakers.map((speaker) => speaker.name.toUpperCase()).join(' & ')}
           </p>
           <p class="block text-sm mb-2">{`${talk.room}. ${startTime}-${endTime}`}</p>
           <a class="text-blue-500 hover:text-blue-700" href={`/talk/${talk.id}`}>Read more</a>
-          <div class="bg-gray-100 -mx-2 -mb-4 mt-4 p-2 rounded-b">
+          <div class="bg-gray-100 -mx-4 -mb-4 mt-4 py-2 px-4 rounded-b">
             {#each talk.tracks as track}
               <Track {track} />
             {/each}

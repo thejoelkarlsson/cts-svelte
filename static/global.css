@@ -127,10 +127,23 @@ img {
  * 2. Remove the margin in Firefox and Safari.
  */
 
+
+input {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
+
+
+input { /* 1 */
+  overflow: visible;
+}
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -322,6 +335,10 @@ img {
   border-style: solid;
 }
 
+input::placeholder {
+  color: #a0aec0;
+}
+
 h1,
 h2,
 h3 {
@@ -346,6 +363,13 @@ a {
  * supplement a partial reset that is already applied by
  * normalize.css.
  */
+
+
+input {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
 
 /**
  * Use the configured 'mono' font family for elements that
@@ -455,6 +479,12 @@ img {
   border-color: rgba(255, 255, 255, var(--border-opacity));
 }
 
+.border-gray-500 {
+  --border-opacity: 1;
+  border-color: #a0aec0;
+  border-color: rgba(160, 174, 192, var(--border-opacity));
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -474,6 +504,10 @@ img {
 
 .border-4 {
   border-width: 4px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .cursor-pointer {
@@ -544,6 +578,11 @@ img {
   margin-bottom: 0.5rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -557,6 +596,11 @@ img {
 .-mx-2 {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
+}
+
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .mr-2 {
@@ -589,6 +633,10 @@ img {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .py-1 {
@@ -624,6 +672,10 @@ img {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .shadow-lg {

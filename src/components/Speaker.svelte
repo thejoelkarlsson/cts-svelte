@@ -12,10 +12,15 @@
       <img src={`/images/speaker/${speaker.image}`} alt={speaker.name} />
     </div>
     <div class="px-4 py-4">
-      <div class="font-bold text-xl px-4 mb-2">{speaker.name}</div>
+      <div class="font-bold text-xl px-4 mb-2">
+        <a href={`/speakers/?speaker=${speaker.name}`}>{speaker.name}</a>
+      </div>
       <div class="w-full -my-2">
         {#each speaker.talks as talk}
-          <a rel="prefetch" href="/talk/{talk.id}" class="flex cursor-pointer hover:text-orange-600 hover:bg-orange-100 py-2 my-2 px-4 rounded">
+          <a
+            rel="prefetch"
+            href="/talk/{talk.id}"
+            class="flex cursor-pointer hover:text-orange-600 hover:bg-orange-100 py-2 my-2 px-4 rounded">
             {talk.title}
           </a>
         {/each}

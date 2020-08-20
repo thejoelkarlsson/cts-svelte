@@ -10,8 +10,15 @@
 </script>
 
 <script>
+  import { stores } from "@sapper/app";
+  const { page } = stores();
   import Speaker from "Components/Speaker.svelte";
   export let speakers;
+  let query = $page.query.speaker || "";
+  let filteredSpeakers = speakers.filter((speaker) => speaker.name.toLowerCase().includes(query.toLowerCase()));
+  function updateFilter() {
+    filteredSpeakers = speakers.filter((speaker) => speaker.name.toLowerCase().includes(query.toLowerCase()));
+  }
 </script>
 
 <style>
@@ -22,14 +29,28 @@
   <title>Speakers</title>
 </svelte:head>
 
-<h1>All speakers</h1>
+<h1>All speakers {query}</h1>
+<input class="border border-gray-500" bind:value={query} />
+<button on:click={updateFilter}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon icon-tabler icon-tabler-search"
+    width="44"
+    height="44"
+    viewBox="0 0 24 24"
+    stroke-width="3"
+    stroke="#00BCD4"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" />
+    <circle cx="10" cy="10" r="7" />
+    <line x1="21" y1="21" x2="15" y2="15" />
+  </svg>
+</button>
 
 <div class="flex flex-wrap -mx-2">
-  {#each speakers as speaker}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-                  tell Sapper to load the data for the page as soon as
-                  the user hovers over the link or taps it, instead of
-                  waiting for the 'click' event -->
+  {#each filteredSpeakers as speaker}
     <Speaker {speaker} />
   {/each}
 </div>
