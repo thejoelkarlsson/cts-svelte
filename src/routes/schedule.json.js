@@ -13,7 +13,7 @@ const duration = (duration, timeUnit = 60 * 1000) => ({
   startTime: new Date(startTime).toLocaleTimeString("sv-SE").substring(0, 5),
   endTime: new Date((startTime += duration * timeUnit)).toLocaleTimeString("sv-SE").substring(0, 5)
 });
-console.log(roomsJson);
+
 export const schedule = JSON.stringify({
   startTime: scheduleJson.startTime,
   slots: scheduleJson.slots.map((slot) =>

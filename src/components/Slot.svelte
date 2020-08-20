@@ -6,7 +6,6 @@
   export let talks;
   export let startTime;
   export let endTime;
-  export let room;
 </script>
 
 <style>
