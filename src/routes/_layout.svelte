@@ -12,7 +12,7 @@
 <Nav {segment} />
 
 <main class="flex-1">
-  <div class="container mx-auto">
+  <div class="container mx-auto my-4">
     <slot />
   </div>
 </main>

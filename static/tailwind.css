@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
+
+.nav-link {
+  @apply block mt-4 text-white mr-4;
+}
+
+.nav-link:hover {
+  @apply text-orange-500;
+}
+
+@screen lg {
+  .nav-link {
+    @apply inline-block mt-0;
+  }
+}
+
+.nav-link.active {
+  @apply text-orange-500;
+}
+
 @tailwind utilities;

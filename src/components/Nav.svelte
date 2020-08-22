@@ -1,78 +1,38 @@
 <script>
   export let segment;
+  let talksActive = segment === "talk" || segment === "talks" ? "active" : "";
+  let speakersActive = segment === "speaker" || segment === "speakers" ? "active" : "";
+  let aboutActive = segment === "about" ? "active" : "";
+  let scheduleActive = segment === "schedule" ? "active" : "";
 </script>
 
 <style>
-  nav {
-    border-bottom: 1px solid rgba(255, 62, 0, 0.1);
-    font-weight: 300;
-    padding: 0 1em;
-  }
 
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  /* clearfix */
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-
-  li {
-    display: block;
-    float: left;
-  }
-
-  [aria-current] {
-    position: relative;
-    display: inline-block;
-  }
-
-  [aria-current]::after {
-    position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 2px;
-    background-color: rgb(255, 62, 0);
-    display: block;
-    bottom: -1px;
-  }
-
-  a {
-    text-decoration: none;
-    padding: 1em 0.5em;
-    display: block;
-  }
 </style>
 
-<nav>
+<nav style="background-color: #323232">
   <div class="container mx-auto">
-    <ul>
-      <li>
-        <a aria-current={segment === undefined ? 'page' : undefined} href=".">home</a>
-      </li>
-      <li>
-        <a aria-current={segment === 'about' ? 'page' : undefined} href="about">about</a>
-      </li>
-      <li>
-        <a rel="prefetch" aria-current={segment === 'talks' || segment === 'talk' ? 'page' : undefined} href="talks">
-          talks
-        </a>
-      </li>
-      <li>
-        <a
-          rel="prefetch"
-          aria-current={segment === 'speakers' || segment === 'speaker' ? 'page' : undefined}
-          href="speakers">
-          speakers
-        </a>
-      </li>
-      <li>
-        <a aria-current={segment === 'schedule' ? 'page' : undefined} href="schedule">schedule</a>
-      </li>
-    </ul>
+    <div class="flex items-center justify-between flex-wrap">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <img src="/cts-logo.png" alt="cts" class="h-24" />
+      </div>
+      <div class="block lg:hidden">
+        <button
+          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white
+          hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto">
+        <a href="/" class={`nav-link ${segment === undefined ? 'active' : ''}`}>Home</a>
+        <a class={`nav-link ${scheduleActive}`} href="/schedule">Schedule</a>
+        <a rel="prefetch" href="/talks" class={`nav-link ${talksActive}`}>Talks</a>
+        <a rel="prefetch" class={`nav-link ${speakersActive}`} href="/speakers">Speakers</a>
+        <a href="/about" class={`nav-link mr-0 ${aboutActive}`}>About</a>
+      </div>
+    </div>
   </div>
 </nav>

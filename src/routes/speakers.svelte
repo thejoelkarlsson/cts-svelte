@@ -22,8 +22,6 @@
   <title>Speakers</title>
 </svelte:head>
 
-<h1>All speakers</h1>
-
 <div class="flex flex-wrap -mx-2">
   {#each speakers as speaker}
     <Speaker {speaker} />

@@ -22,8 +22,6 @@
   <title>Talks</title>
 </svelte:head>
 
-<h1>All talks</h1>
-
 <div class="flex flex-wrap -mx-2">
   {#each talks as talk}
     <Talk {talk} />

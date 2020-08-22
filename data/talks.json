@@ -439,5 +439,20 @@
     "presentationUrl": "https://docs.google.com/presentation/d/1wOjlgyNziYuWulW4jnLXXCPHFrAtyRc26cWYfCmdi0Y/edit#slide=id.g5bba64ee9a_0_33",
     "tracks": ["ledarskap", "icketecknisk", "utvecklingsmetodik", "utmananormer", "swedish"],
     "level": 1
+  },
+  {
+    "id": 27,
+    "speakers": [
+      {
+        "name": "Joel Karlsson",
+        "image": "joel-karlsson.jpg"
+      }
+    ],
+    "title": "Svelte? En introduktion som ger dig kött på benen 🍖",
+    "description": "Hur kan det nya Javascript-ramverket Svelte skapa snabbare appar än Vue och React? Följ med på en kort genomgång av Sveltes grunder och få en översikt med kodexempel.",
+    "feedbackUrl": "https://forms.gle/roMxahDraoBcHhd96",
+    "presentationUrl": "https://docs.google.com/presentation/d/1wOjlgyNziYuWulW4jnLXXCPHFrAtyRc26cWYfCmdi0Y/edit#slide=id.g5bba64ee9a_0_33",
+    "tracks": ["Svelte", "web", "javascript", "frontend", "meat"],
+    "level": 1
   }
 ]
