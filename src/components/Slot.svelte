@@ -5,7 +5,6 @@
   export let talks;
   export let startTime;
   export let endTime;
-  export let light;
   let visible = true;
 
   function toggleVisibility() {
@@ -17,7 +16,7 @@
 
 </style>
 
-<div class={`flex flex-wrap p-2 -mx-2 mb-4 ${light ? 'bg-blue-200' : 'bg-blue-300'}`}>
+<div class="flex flex-wrap p-2 -mx-2 mb-4 bg-gray-400">
   <div class="w-full flex justify-between cursor-pointer pl-2" on:click={toggleVisibility}>
     <p class="font-bold text-xl">{startTime}-{endTime}</p>
     <svg

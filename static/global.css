@@ -481,16 +481,10 @@ img {
   background-color: rgba(237, 242, 247, var(--bg-opacity));
 }
 
-.bg-blue-200 {
+.bg-gray-400 {
   --bg-opacity: 1;
-  background-color: #bee3f8;
-  background-color: rgba(190, 227, 248, var(--bg-opacity));
-}
-
-.bg-blue-300 {
-  --bg-opacity: 1;
-  background-color: #90cdf4;
-  background-color: rgba(144, 205, 244, var(--bg-opacity));
+  background-color: #cbd5e0;
+  background-color: rgba(203, 213, 224, var(--bg-opacity));
 }
 
 .hover\:bg-blue-100:hover {
@@ -667,6 +661,10 @@ img {
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
+}
+
+.mr-0 {
+  margin-right: 0;
 }
 
 .mr-2 {

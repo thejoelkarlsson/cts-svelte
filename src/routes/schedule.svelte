@@ -22,6 +22,6 @@
   <title>Schedule</title>
 </svelte:head>
 
-{#each schedule.slots as slot, i}
-  <Slot {...slot} light={i % 2 == 0} />
+{#each schedule.slots as slot}
+  <Slot {...slot} />
 {/each}

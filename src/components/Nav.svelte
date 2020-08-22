@@ -1,9 +1,9 @@
 <script>
   export let segment;
-  let talksActive = segment === "talk" || segment === "talks" ? "active" : "";
-  let speakersActive = segment === "speaker" || segment === "speakers" ? "active" : "";
-  let aboutActive = segment === "about" ? "active" : "";
-  let scheduleActive = segment === "schedule" ? "active" : "";
+  $: talksActive = segment === "talk" || segment === "talks" ? "active" : "";
+  $: speakersActive = segment === "speaker" || segment === "speakers" ? "active" : "";
+  $: aboutActive = segment === "about" ? "active" : "";
+  $: scheduleActive = segment === "schedule" ? "active" : "";
 </script>
 
 <style>
