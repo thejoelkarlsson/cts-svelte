@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full w-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -20,10 +20,10 @@
 	     the current page has one -->
     %sapper.head%
   </head>
-  <body>
+  <body class="h-full w-full">
     <!-- The application will be rendered inside this element,
 	     because `src/client.js` references it -->
-    <div id="sapper">%sapper.html%</div>
+    <div id="sapper" class="h-full w-full flex flex-col">%sapper.html%</div>
 
     <!-- Sapper creates a <script> tag containing `src/client.js`
 	     and anything else it needs to hydrate the app and

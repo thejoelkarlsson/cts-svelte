@@ -11,7 +11,7 @@
 
 <Nav {segment} />
 
-<main>
+<main class="flex-1">
   <div class="container mx-auto">
     <slot />
   </div>

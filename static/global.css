@@ -80,11 +80,6 @@ a {
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
-
-strong {
-  font-weight: bolder;
-}
-
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -200,10 +195,6 @@ img {
  * Add the correct display in IE 10+.
  */
 
-template {
-  display: none;
-}
-
 /**
  * Add the correct display in IE 10.
  */
@@ -225,7 +216,6 @@ template {
 
 h1,
 h3,
-figure,
 p,
 pre {
   margin: 0;
@@ -419,22 +409,22 @@ img {
   background-color: rgba(237, 242, 247, var(--bg-opacity));
 }
 
-.bg-orange-200 {
+.bg-blue-200 {
   --bg-opacity: 1;
-  background-color: #feebc8;
-  background-color: rgba(254, 235, 200, var(--bg-opacity));
+  background-color: #bee3f8;
+  background-color: rgba(190, 227, 248, var(--bg-opacity));
 }
 
-.bg-orange-300 {
+.bg-blue-300 {
   --bg-opacity: 1;
-  background-color: #fbd38d;
-  background-color: rgba(251, 211, 141, var(--bg-opacity));
+  background-color: #90cdf4;
+  background-color: rgba(144, 205, 244, var(--bg-opacity));
 }
 
-.hover\:bg-orange-100:hover {
+.hover\:bg-blue-100:hover {
   --bg-opacity: 1;
-  background-color: #fffaf0;
-  background-color: rgba(255, 250, 240, var(--bg-opacity));
+  background-color: #ebf8ff;
+  background-color: rgba(235, 248, 255, var(--bg-opacity));
 }
 
 .border-white {
@@ -464,6 +454,10 @@ img {
   border-width: 4px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -484,6 +478,10 @@ img {
   display: none;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -494,6 +492,10 @@ img {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .clearfix:after {
@@ -512,6 +514,10 @@ img {
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .text-sm {
@@ -636,8 +642,16 @@ img {
   padding-left: 0.5rem;
 }
 
+.bottom-0 {
+  bottom: 0;
+}
+
 .shadow-lg {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-gray-600 {
@@ -658,10 +672,10 @@ img {
   color: rgba(66, 153, 225, var(--text-opacity));
 }
 
-.hover\:text-orange-600:hover {
+.hover\:text-blue-600:hover {
   --text-opacity: 1;
-  color: #dd6b20;
-  color: rgba(221, 107, 32, var(--text-opacity));
+  color: #3182ce;
+  color: rgba(49, 130, 206, var(--text-opacity));
 }
 
 .hover\:text-blue-700:hover {

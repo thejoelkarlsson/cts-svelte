@@ -1,5 +1,4 @@
 <script>
-  import SpeakerImage from "Components/SpeakerImage.svelte";
   import Tracks from "Components/Tracks.svelte";
   export let type;
   export let title;
@@ -18,7 +17,7 @@
 
 </style>
 
-<div class={`flex flex-wrap p-2 -mx-2 mb-4 ${light ? 'bg-orange-200' : 'bg-orange-300'}`}>
+<div class={`flex flex-wrap p-2 -mx-2 mb-4 ${light ? 'bg-blue-200' : 'bg-blue-300'}`}>
   <div class="w-full flex justify-between cursor-pointer pl-2" on:click={toggleVisibility}>
     <p class="font-bold text-xl">{startTime}-{endTime}</p>
     <svg
@@ -38,7 +37,7 @@
 
   {#if type === 'keynote' || type === 'fika'}
     <div class={`w-full my-2 px-2 ${visible ? '' : 'hidden'}`}>
-      <div class="bg-white p-4 rounded shadow-lg">
+      <div class="bg-white p-4 rounded">
         <p class="font-bold text-xl">{title}</p>
         <p class="text-sm">{startTime}-{endTime}</p>
       </div>
@@ -46,7 +45,7 @@
   {:else if type === 'talks'}
     {#each talks as talk}
       <div class={`w-full sm:w-1/2 md:w-1/3 my-4 px-2 ${visible ? '' : 'hidden'}`}>
-        <div class="bg-white p-4 rounded shadow-lg">
+        <div class="bg-white p-4 rounded">
           <p class="font-bold text-xl mb-2">{talk.title}</p>
           <p class="block text-gray-600 text-sm uppercase">
             {talk.speakers.map((speaker) => speaker.name).join(' & ')}

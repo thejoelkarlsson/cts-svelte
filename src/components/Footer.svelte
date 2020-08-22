@@ -3,12 +3,10 @@
 </script>
 
 <style>
-  footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    text-align: center;
-  }
+
 </style>
 
-<footer>
+<footer class="w-full text-center border-t border-grey p-4 bottom-0">
   <p>Copyright 2019-{year}</p>
+  <div class="flex-col h-full hidden" />
 </footer>
