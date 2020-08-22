@@ -4,6 +4,10 @@
   $: speakersActive = segment === "speaker" || segment === "speakers" ? "active" : "";
   $: aboutActive = segment === "about" ? "active" : "";
   $: scheduleActive = segment === "schedule" ? "active" : "";
+  let navigationOpen = false;
+  function toggleNavigation() {
+    navigationOpen = !navigationOpen;
+  }
 </script>
 
 <style>
@@ -18,15 +22,17 @@
       </div>
       <div class="block lg:hidden">
         <button
-          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white
-          hover:border-white">
+          on:click={toggleNavigation}
+          class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-orange-200
+          hover:border-orange-400">
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
         </button>
       </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto">
+      <div
+        class={`w-full block flex-grow pb-8 lg:pb-0 lg:flex lg:items-center lg:justify-end lg:w-auto ${navigationOpen ? '' : 'hidden'}`}>
         <a href="/" class={`nav-link ${segment === undefined ? 'active' : ''}`}>Home</a>
         <a class={`nav-link ${scheduleActive}`} href="/schedule">Schedule</a>
         <a rel="prefetch" href="/talks" class={`nav-link ${talksActive}`}>Talks</a>
