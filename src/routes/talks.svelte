@@ -26,10 +26,6 @@
 
 <div class="flex flex-wrap -mx-2">
   {#each talks as talk}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-                  tell Sapper to load the data for the page as soon as
-                  the user hovers over the link or taps it, instead of
-                  waiting for the 'click' event -->
     <Talk {talk} />
   {/each}
 </div>

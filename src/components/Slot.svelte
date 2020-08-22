@@ -1,7 +1,6 @@
 <script>
   import SpeakerImage from "Components/SpeakerImage.svelte";
-  import Track from "Components/Track.svelte";
-  import SlotItem from "Components/SlotItem.svelte";
+  import Tracks from "Components/Tracks.svelte";
   export let type;
   export let title;
   export let talks;
@@ -49,16 +48,12 @@
       <div class={`w-full sm:w-1/2 md:w-1/3 my-4 px-2 ${visible ? '' : 'hidden'}`}>
         <div class="bg-white p-4 rounded shadow-lg">
           <p class="font-bold text-xl mb-2">{talk.title}</p>
-          <p class="block text-gray-600 text-sm">
-            {talk.speakers.map((speaker) => speaker.name.toUpperCase()).join(' & ')}
+          <p class="block text-gray-600 text-sm uppercase">
+            {talk.speakers.map((speaker) => speaker.name).join(' & ')}
           </p>
           <p class="block text-sm mb-2">{`${talk.room}. ${startTime}-${endTime}`}</p>
           <a class="text-blue-500 hover:text-blue-700" href={`/talk/${talk.id}`}>Read more</a>
-          <div class="bg-gray-100 -mx-4 -mb-4 mt-4 py-2 px-4 rounded-b">
-            {#each talk.tracks as track}
-              <Track {track} />
-            {/each}
-          </div>
+          <Tracks tracks={talk.tracks} />
         </div>
       </div>
     {/each}
